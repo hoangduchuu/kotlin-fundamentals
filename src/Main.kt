@@ -16,11 +16,13 @@ fun main(args: Array<String>) {
     println("the anser is ${q.Answer} ")
 
     val message = if (q.Answer == q.correctAnswer) {
-        "you were corect"
+        "from main: you were corect"
     } else {
-        "try again?"
+        "from main: try again?"
     }
     println(message)
+
+    q.printResult()
 
 
 }
@@ -32,5 +34,20 @@ class Question {
 
     fun display() {
         println("you said $Answer")
+    }
+
+
+    fun printResult() {
+
+        val message = when (Answer) {
+            correctAnswer -> "from printResult: you were corect"
+            else -> "from printResult: try again?"
+        }
+        println(message)
+
+        when (Answer) {
+            correctAnswer -> println("from when: you were correct")
+            else -> println("from when : try again?")
+        }
     }
 }
