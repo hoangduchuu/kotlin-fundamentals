@@ -14,13 +14,23 @@ fun main(args: Array<String>) {
 
     q.display();
     println("the anser is ${q.Answer} ")
+
+    val message = if (q.Answer == q.correctAnswer) {
+        "you were corect"
+    } else {
+        "try again?"
+    }
+    println(message)
+
+
 }
 
 class Question {
     var Answer: String = ""
+    val correctAnswer = "42"
     var Question: String = "what is the answer to life?"
 
-    fun display(){
+    fun display() {
         println("you said $Answer")
     }
 }
