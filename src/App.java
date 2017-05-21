@@ -4,5 +4,6 @@
 public class App {
     public static void main(String[] args) {
         System.out.println(ComunicatorFunctionYouCanPutAnyThingHere.max(12, 3));
+        displayfunctions.log("log from java");
     }
 }
