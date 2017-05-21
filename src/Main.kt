@@ -7,26 +7,29 @@ import net.hoangduchuu.Person
 
 fun main(args: Array<String>) {
     println("hello, world")
-    var q = Question()
-    q.Answer = "42"
-    q.Question = ""
+    val q: Question? = null
+    q?.Answer = "42"
+    q?.display();
 
+    q?.Answer = null //error if String instead of String?
 
-    q.display();
-    println("the anser is ${q.Answer} ")
+    if (q != null) {
+        if (q?.Answer == null) {
+            println("null answer!")
+        } else {
+            println("not null answer!")
 
-    val message = if (q.Answer == q.correctAnswer) {
-        "you were corect"
+        }
     } else {
-        "try again?"
+        println("null cmn q roi")
+
     }
-    println(message)
 
 
 }
 
 class Question {
-    var Answer: String = ""
+    var Answer: String? = ""
     val correctAnswer = "42"
     var Question: String = "what is the answer to life?"
 
