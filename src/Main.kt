@@ -6,10 +6,20 @@
 fun main(args: Array<String>) {
     println("hello, world");
 
-    log(loglevel = 213, msg = "helloword")
+    val text = "With    multiple \t whitespace"
+    println(replaceMultipleWhiteSpace(text))
+    println(text.replaceMultipleWhiteSpaceEx())
 
 }
 
-fun log(msg: String, loglevel: Int = 12) {
-    println(msg + "-- " + loglevel)
+
+fun replaceMultipleWhiteSpace(value: String): String {
+    var regex = Regex("\\s+")
+    return regex.replace(value, " ")
+}
+
+
+fun String.replaceMultipleWhiteSpaceEx(): String {
+    var regex = Regex("\\s+")
+    return regex.replace(this, " ")
 }
